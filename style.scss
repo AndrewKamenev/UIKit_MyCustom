@@ -1,0 +1,50 @@
+@import 'scss/variables.scss';
+@import 'scss/mixins.scss';
+@import '_bootstrap.scss';
+
+.block {
+
+}
+// margins & sizes
+.m-sm {
+	margin-bottom: 20px;
+}
+.m-md {
+	margin-bottom: 40px;
+}
+.w40 {
+	width: 40px;
+}
+.w450 {
+	display: inline-block;
+	width: 450px;
+}
+// buttons
+.btn, .label {
+	text-transform: uppercase;
+	.text-small {
+		font-size: 0.7em;
+	}
+}
+
+.btn-static-width {
+	width: 140px;
+}
+
+.btn-group-vertical {
+	.btn {
+		margin-bottom: 0;
+	}
+}
+
+// labels
+.label {
+  display: inline;
+  padding: .4em .6em .5em;
+ }
+.label-default {
+	color: black;
+	border: solid 1px black;
+}
+
+//badges 
