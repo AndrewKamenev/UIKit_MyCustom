@@ -17,7 +17,8 @@
 }
 .w450 {
 	display: inline-block;
-	width: 450px;
+	width: 49%;
+	float: left;
 }
 // buttons
 .btn, .label {
@@ -48,3 +49,52 @@
 }
 
 //badges 
+.badge {
+	border-radius: 25px;
+}
+//tooltips
+.tooltip {
+	opacity: 1;
+	position: relative;
+	display: inline-block;
+}
+//dropdowns
+.dropdown-menu {
+	display: block;
+	position: relative;
+	li a:hover {
+		background-color: #656d78;
+		color: white;
+	}
+	li {
+		position: relative;
+		.dropdown-menu {
+			position: absolute;
+			top: 0;
+			left: 100%;
+		}
+	}
+	.divider {
+	background-color: #656d78;
+}
+}
+.dropdown-inverse {
+	background-color: $color-dark;
+	li a {
+		color: white;
+	}
+}
+
+//popovers
+.popover {
+	position: relative;
+	display: inline-block;
+	width: 230px;
+	margin-right: 20px;
+	color: white;
+	.popover-title {
+		color: #aab2bd;
+		border-bottom: none;
+		background-color: $color-dark;
+	}
+}
