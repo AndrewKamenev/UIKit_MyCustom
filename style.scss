@@ -2,8 +2,8 @@
 @import 'scss/mixins.scss';
 @import '_bootstrap.scss';
 
-.block {
-
+.clear {
+	clear: both;
 }
 // margins & sizes
 .m-sm {
@@ -20,12 +20,12 @@
 	width: 49%;
 	float: left;
 }
+
+//format
+uppe
 // buttons
-.btn, .label {
-	text-transform: uppercase;
-	.text-small {
-		font-size: 0.7em;
-	}
+.text-small {
+	font-size: 0.7em;
 }
 
 .btn-static-width {
@@ -89,12 +89,19 @@
 .popover {
 	position: relative;
 	display: inline-block;
-	width: 230px;
 	margin-right: 20px;
 	color: white;
 	.popover-title {
 		color: #aab2bd;
 		border-bottom: none;
-		background-color: $color-dark;
-	}
+		}
+}
+
+//forms
+.input-rounded {
+	border-radius: 20px;
+}
+option {
+	border-bottom: 1px solid #e6e9ed;
+	padding: 10px 0;
 }

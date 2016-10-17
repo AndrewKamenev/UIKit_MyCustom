@@ -501,7 +501,7 @@ $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d !default;
+$state-success-text:             #8cc152;
 $state-success-bg:               #dff0d8 !default;
 $state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
@@ -509,11 +509,11 @@ $state-info-text:                #31708f !default;
 $state-info-bg:                  #d9edf7 !default;
 $state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
 
-$state-warning-text:             #8a6d3b !default;
+$state-warning-text:             #f6bb42;
 $state-warning-bg:               #fcf8e3 !default;
 $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 
-$state-danger-text:              #a94442 !default;
+$state-danger-text:              #da4453;
 $state-danger-bg:                #f2dede !default;
 $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
 
@@ -543,14 +543,14 @@ $tooltip-arrow-color:         $tooltip-bg !default;
 //** Popover body background color
 $popover-bg:                          $color-dark;
 //** Popover maximum width
-$popover-max-width:                   276px !default;
+$popover-max-width:                   240px;
 //** Popover border color
-$popover-border-color:                rgba(0,0,0,.2) !default;
+$popover-border-color:                $popover-bg;
 //** Popover fallback border color
 $popover-fallback-border-color:       #ccc !default;
 
 //** Popover title background color
-$popover-title-bg:                    darken($popover-bg, 3%) !default;
+$popover-title-bg:                    $popover-bg;
 
 //** Popover arrow width
 $popover-arrow-width:                 10px !default;
