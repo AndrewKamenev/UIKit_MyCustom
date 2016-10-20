@@ -1,0 +1,170 @@
+//timeline
+
+$timeline-wrapper-bg: #f1f2f6 !default; 
+$timeline-line-color: #ccd1d9;
+$timeline-line-width: 2px;
+
+//block with name of month
+$timeline-date-width: 128px !default;
+$timeline-date-bg: $timeline-line-color;
+$timeline-date-font-size: 14px;
+$timeline-date-color: #fff;
+
+$distance-between-messages: 35px;
+//marker on the line
+$message-marker-width: 22px;
+$message-marker-bg: #3aafda;
+$message-marker-border: none;
+//date of message
+$message-date-color: #3aafda;
+$message-date-font-size: 14px;
+$message-date-position: -100px; //position from top left corner of message
+//message
+$message-bg: #fff;
+$message-padding: 10px;
+$message-border-radius: 4px;
+$message-icon-photo-width: 64px;
+$message-font-size: 14px;
+$message-title-font-size: 14px;
+
+.timeline-wrapper {
+	position: relative;
+	padding: 50px 0;
+	background-color: $timeline-wrapper-bg;
+}
+.tl-date {
+	position: relative;
+	width: $timeline-date-width;
+	color: $timeline-date-color;
+	background-color: $timeline-date-bg;
+	left: 50%;
+	margin-left: -$timeline-date-width/2 - $timeline-line-width/2;
+	font-size: $timeline-date-font-size;
+	text-align: center;
+	z-index: 1;
+}
+.tl-message-wrapper {
+	padding: $distance-between-messages/2 30px;
+	position: relative;
+	width: 50%;
+}
+.tl-message-marker {
+	display: block;
+	position: absolute;
+	width: $message-marker-width;
+	height: $message-marker-width;
+	border-radius: 50%;
+	background-color: $message-marker-bg;
+	border: $message-marker-border;
+}
+.message-date {
+	position: absolute;
+	top: 0;
+	font-size: $message-date-font-size;
+	color: $message-date-color;
+
+}
+.tl-message-wrapper-right {
+	border-left: solid $timeline-line-width $timeline-line-color;
+	left: 50%;
+	margin-left: -$timeline-line-width;
+	&:before {
+		content: "";
+		@extend .tl-message-marker;
+		left: -$message-marker-width/2 - $timeline-line-width/2;
+	}
+	.tl-message-date {
+		@extend .message-date;
+		left: $message-date-position;
+	}
+}
+.tl-message-wrapper-left {
+	border-right: solid $timeline-line-width $timeline-line-color;
+	&:before {
+		content: "";
+		@extend .tl-message-marker;
+		right: -$message-marker-width/2 - $timeline-line-width/2;
+	}
+	.tl-message-date {
+		@extend .message-date;
+		right: $message-date-position;
+	}
+}
+.tl-message {
+	position: relative;
+	background-color: $message-bg;
+	padding: 10px 10px 10px $message-icon-photo-width + $message-padding + 10px;
+	border-radius: $message-border-radius;
+	
+}
+.tl-message-img {
+	position: absolute;
+	left: $message-padding;
+	width: $message-icon-photo-width;
+	height: $message-icon-photo-width;
+	border-radius: 3px;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+}
+.tl-message-title {
+	font-size: $message-title-font-size;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.tl-message-content {
+	font-size: $message-font-size;
+
+}
+@media all and (max-width: 700px) {
+	.timeline-wrapper {
+		padding: 5% 20% 5% 0;
+	}
+	.tl-message-wrapper {
+		width: 100%;
+		
+	}
+	.tl-date {
+		left: $message-date-position * -1;
+	}
+
+	.tl-message-wrapper-left, .tl-message-wrapper-right {
+		border-left: solid $timeline-line-width $timeline-line-color;
+		border-right: none;
+		left: $message-date-position * -1;
+		margin-left: 0;
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: $message-marker-width;
+			height: $message-marker-width;
+			border-radius: 50%;
+			background-color: $message-marker-bg;
+			border: $message-marker-border;
+			left: -$message-marker-width/2 - $timeline-line-width/2;
+		}
+		.tl-message-date {
+			position: absolute;
+			top: 0;
+			font-size: $message-date-font-size;
+			color: $message-date-color;
+			left: $message-date-position;
+		}
+	}
+}
+@media all and (max-width: 400px) {
+	.timeline-wrapper {
+		padding: 5%;
+	}
+	.tl-message-date {
+		display: none;
+	}
+	.tl-message-wrapper-left, .tl-message-wrapper-right {
+		left: $timeline-date-width / 2;
+	}
+	.tl-date {
+		left: $timeline-date-width / 2;
+	}
+}
